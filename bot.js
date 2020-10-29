@@ -31,4 +31,4 @@ client.on('message', async message => {
 });
 
 // CODE for Oreinos
-client.login('NzcwOTkzMDY5NjU0NTQwMzQ4.X5lpQA.3_q5RC5pHXEVifIBil_FBkNZ3HA');
+client.login('process.env.BOT_TOKEN');
