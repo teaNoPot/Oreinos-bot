@@ -1,0 +1,24 @@
+{
+  "name": "Oreinos-bot",
+  "version": "1.0.0",
+  "description": "Project Oreinos, stores every human's words and creates a theme for each person",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teaNoPot/Oreinos-bot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/teaNoPot/Oreinos-bot/issues"
+  },
+  "homepage": "https://github.com/teaNoPot/Oreinos-bot#readme",
+  "dependencies": {
+    "discord.js": "^12.4.1",
+    "node-fetch": "^2.6.1"
+  }
+}
