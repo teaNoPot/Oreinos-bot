@@ -26,21 +26,25 @@ client.on('message', async message => {
         const { list } = await fetch(`https://api.urbandictionary.com/v0/define?${query}`)
                                 .then(response => response.json());
 
-        const trim = (str, max) => ((str.length > max) ? `${str.slice(0, max - 3)}...` : str);
+        if (list !== undefined) {
+            const trim = (str, max) => ((str.length > max) ? `${str.slice(0, max - 3)}...` : str);
 
-        const [answer] = list;
+            const [answer] = list;
 
-        const embed = new MessageEmbed()
-            .setColor('#EFFF00')
-            .setTitle(answer.word)
-            .setURL(answer.permalink)
-            .addFields(
-                { name: 'Definition', value: trim(answer.definition, 1024) },
-                { name: 'Example', value: trim(answer.example, 1024) },
-                { name: 'Rating', value: `${answer.thumbs_up} thumbs up. ${answer.thumbs_down} thumbs down.` }
-            );
+            const embed = new MessageEmbed()
+                .setColor('#EFFF00')
+                .setTitle(answer.word)
+                .setURL(answer.permalink)
+                .addFields(
+                    { name: 'Definition', value: trim(answer.definition, 1024) },
+                    { name: 'Example', value: trim(answer.example, 1024) },
+                    { name: 'Rating', value: `${answer.thumbs_up} thumbs up. ${answer.thumbs_down} thumbs down.` }
+                );
 
-        message.channel.send(embed);
+            message.channel.send(embed);
+        } else 
+            message.channel.send("My infinite grimoire does not contain this magical word. They lied to you..");
+        
     }
 
 
