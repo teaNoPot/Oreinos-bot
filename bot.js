@@ -3,9 +3,7 @@ const fetch = require('node-fetch');
 const querystring = require('querystring');
 http = require('http')
 handle = (req, res) => res.end("hit");
-
 server = http.createServer(handle);
-
 server.listen(process.env.PORT || 5000);
 
 
@@ -34,7 +32,7 @@ client.on('message', async message => {
                                 .then(response => response.json());
 
         console.log(list);
-        if (list.length > 1) {
+        if (list.length > 0) {
             const trim = (str, max) => ((str.length > max) ? `${str.slice(0, max - 3)}...` : str);
 
             const [answer] = list;
