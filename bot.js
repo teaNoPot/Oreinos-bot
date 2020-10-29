@@ -27,7 +27,7 @@ client.on('message', async message => {
                                 .then(response => response.json());
 
         console.log(list);
-        if (list !== undefined) {
+        if (list.length > 1) {
             const trim = (str, max) => ((str.length > max) ? `${str.slice(0, max - 3)}...` : str);
 
             const [answer] = list;
