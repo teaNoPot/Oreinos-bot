@@ -26,6 +26,7 @@ client.on('message', async message => {
         const { list } = await fetch(`https://api.urbandictionary.com/v0/define?${query}`)
                                 .then(response => response.json());
 
+        console.log(list);
         if (list !== undefined) {
             const trim = (str, max) => ((str.length > max) ? `${str.slice(0, max - 3)}...` : str);
 
