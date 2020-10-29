@@ -31,4 +31,4 @@ client.on('message', async message => {
 });
 
 // CODE for Oreinos
-client.login('process.env.BOT_TOKEN');
+client.login(process.env.BOT_TOKEN);
